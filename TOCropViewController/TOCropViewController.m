@@ -104,7 +104,6 @@ typedef NS_ENUM(NSInteger, TOCropViewControllerAspectRatio) {
     
     UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, kTopLabelHeight)];
     [backButton setImage:[UIImage imageNamed:@"back_white"] forState:UIControlStateNormal];
-    [backButton setBackgroundColor:[UIColor redColor]];
     [backButton addTarget:self action:@selector(cancelButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backButton];
     
