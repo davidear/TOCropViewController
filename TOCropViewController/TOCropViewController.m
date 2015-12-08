@@ -102,7 +102,7 @@ typedef NS_ENUM(NSInteger, TOCropViewControllerAspectRatio) {
     topLabel.backgroundColor = [UIColor clearColor];
     [self.view addSubview:topLabel];
     
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, kTopLabelHeight)];
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, kTopLabelHeight)];
     [backButton setImage:[UIImage imageNamed:@"back_white"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(cancelButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backButton];
