@@ -39,6 +39,7 @@ typedef NS_ENUM(NSInteger, TOCropViewControllerAspectRatio) {
     TOCropViewControllerAspectRatio16x9
 };
 
+#define kTopLabelHeight 44
 @interface TOCropViewController () <UIActionSheetDelegate, UIViewControllerTransitioningDelegate, TOCropViewDelegate>
 
 @property (nonatomic, readwrite) UIImage *image;
@@ -87,10 +88,26 @@ typedef NS_ENUM(NSInteger, TOCropViewControllerAspectRatio) {
 
     BOOL landscapeLayout = CGRectGetWidth(self.view.frame) > CGRectGetHeight(self.view.frame);
     self.cropView = [[TOCropView alloc] initWithImage:self.image];
-    self.cropView.frame = (CGRect){(landscapeLayout ? 44.0f : 0.0f),0,(CGRectGetWidth(self.view.bounds) - (landscapeLayout ? 44.0f : 0.0f)), (CGRectGetHeight(self.view.bounds)-(landscapeLayout ? 0.0f : 44.0f)) };
+    self.cropView.frame = (CGRect){(landscapeLayout ? 44.0f : 0.0f),kTopLabelHeight,(CGRectGetWidth(self.view.bounds) - (landscapeLayout ? 44.0f : 0.0f)), (CGRectGetHeight(self.view.bounds)-(landscapeLayout ? 0.0f : 44.0f) - kTopLabelHeight) };
     self.cropView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.cropView.aspectLockEnabled = YES;
     self.cropView.delegate = self;
     [self.view addSubview:self.cropView];
+    
+    UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, kTopLabelHeight)];
+    topLabel.text = @"重新选框，小AI帮你搜索更准确";
+    topLabel.font = [UIFont systemFontOfSize:15];
+    topLabel.textAlignment = NSTextAlignmentCenter;
+    topLabel.textColor = [UIColor whiteColor];
+    topLabel.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:topLabel];
+    
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, kTopLabelHeight)];
+    [backButton setImage:[UIImage imageNamed:@"back_white"] forState:UIControlStateNormal];
+    [backButton setBackgroundColor:[UIColor redColor]];
+    [backButton addTarget:self action:@selector(cancelButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backButton];
+    
     
     self.toolbar = [[TOCropToolbar alloc] initWithFrame:CGRectZero];
     self.toolbar.frame = [self frameForToolBarWithVerticalLayout:CGRectGetWidth(self.view.bounds) < CGRectGetHeight(self.view.bounds)];
@@ -191,7 +208,7 @@ typedef NS_ENUM(NSInteger, TOCropViewControllerAspectRatio) {
         CGRect frame = self.cropView.frame;
         frame.origin.x = 0.0f;
         frame.size.width = CGRectGetWidth(self.view.bounds);
-        frame.size.height = CGRectGetHeight(self.view.bounds) - 44.0f;
+        frame.size.height = CGRectGetHeight(self.view.bounds) - 44.0f - kTopLabelHeight;
         self.cropView.frame = frame;
     }
     
