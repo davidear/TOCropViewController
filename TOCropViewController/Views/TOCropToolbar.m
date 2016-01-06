@@ -61,10 +61,7 @@
     
     _doneTextButton = [UIButton buttonWithType:UIButtonTypeSystem];
     _doneTextButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-    [_doneTextButton setTitle:NSLocalizedStringFromTableInBundle(@"Done",
-                                                                 @"TOCropViewControllerLocalizable",
-                                                                 [NSBundle bundleForClass:[self class]],
-                                                                 nil)
+    [_doneTextButton setTitle:@"完成"
                      forState:UIControlStateNormal];
     [_doneTextButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_doneTextButton.titleLabel setFont:[UIFont systemFontOfSize:18.0]];
