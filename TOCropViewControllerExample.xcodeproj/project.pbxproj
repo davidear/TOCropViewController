@@ -24,6 +24,8 @@
 		22DB4D9A1B234D07008B8466 /* TOCropToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DB4D931B234D07008B8466 /* TOCropToolbar.m */; };
 		22DB4D9B1B234D07008B8466 /* TOCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DB4D951B234D07008B8466 /* TOCropView.m */; };
 		22DB4D9E1B234D4F008B8466 /* TOActivityCroppedImageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DB4D9D1B234D4F008B8466 /* TOActivityCroppedImageProvider.m */; };
+		B256DA841C16B964003F5D73 /* back_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B256DA821C16B964003F5D73 /* back_white@2x.png */; };
+		B256DA851C16B964003F5D73 /* back_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B256DA831C16B964003F5D73 /* back_white@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		22DB4D951B234D07008B8466 /* TOCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropView.m; sourceTree = "<group>"; };
 		22DB4D9C1B234D4F008B8466 /* TOActivityCroppedImageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOActivityCroppedImageProvider.h; sourceTree = "<group>"; };
 		22DB4D9D1B234D4F008B8466 /* TOActivityCroppedImageProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOActivityCroppedImageProvider.m; sourceTree = "<group>"; };
+		B256DA821C16B964003F5D73 /* back_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_white@2x.png"; sourceTree = "<group>"; };
+		B256DA831C16B964003F5D73 /* back_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_white@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 			children = (
 				223424711ABBC0CD00BBC2B1 /* AppDelegate.h */,
 				223424721ABBC0CD00BBC2B1 /* AppDelegate.m */,
+				B256DA821C16B964003F5D73 /* back_white@2x.png */,
+				B256DA831C16B964003F5D73 /* back_white@3x.png */,
 				223424741ABBC0CD00BBC2B1 /* ViewController.h */,
 				223424751ABBC0CD00BBC2B1 /* ViewController.m */,
 				223424771ABBC0CD00BBC2B1 /* Main.storyboard */,
@@ -259,7 +265,7 @@
 					};
 					223424691ABBC0CD00BBC2B1 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 6LF3GMKZAB;
+						DevelopmentTeam = 24EL9XJBYB;
 					};
 				};
 			};
@@ -307,10 +313,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B256DA851C16B964003F5D73 /* back_white@3x.png in Resources */,
 				223424791ABBC0CD00BBC2B1 /* Main.storyboard in Resources */,
 				2234247E1ABBC0CD00BBC2B1 /* LaunchScreen.xib in Resources */,
 				2234247B1ABBC0CD00BBC2B1 /* Images.xcassets in Resources */,
 				22C3C5471AC8CA0D00E86280 /* TOCropViewControllerLocalizable.strings in Resources */,
+				B256DA841C16B964003F5D73 /* back_white@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +542,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timoliver.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "1d2cf8a9-6016-4390-869d-539a17d12c56";
 			};
 			name = Debug;
 		};
@@ -553,7 +561,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timoliver.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "1d2cf8a9-6016-4390-869d-539a17d12c56";
 			};
 			name = Release;
 		};
